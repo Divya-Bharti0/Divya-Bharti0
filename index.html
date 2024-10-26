@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Education Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleDetails(detailId) {
+            const details = document.getElementById(detailId);
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+
+        window.onload = function() {
+            // Close the login popup on click
+            const loginButton = document.getElementById("loginButton");
+            const loginPopup = document.getElementById("loginPopup");
+            const closePopup = document.getElementById("closePopup");
+
+            loginButton.onclick = function() {
+                loginPopup.style.display = "block";
+            }
+
+            closePopup.onclick = function() {
+                loginPopup.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target === loginPopup) {
+                    loginPopup.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="edu.png" alt="EduLearn Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="login-btn" id="loginButton">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Learn Anytime, Anywhere</h1>
+            <p>Join our online courses and start your learning journey today.</p>
+            <button class="cta-btn">Explore Courses</button>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section class="course" id="courses">
+        <h2>Popular Courses</h2>
+        <div class="course-container">
+            <div class="course-card">
+                <img src="images (9).jpeg" alt="Web Development Course">
+                <h3>Web Development</h3>
+                <p>Learn HTML, CSS, and JavaScript from scratch.</p>
+                <button class="crash-course-btn" onclick="toggleDetails('webDevDetails')">Crash Course</button>
+                <div id="webDevDetails" class="course-details" style="display: none;">
+                    <p>Duration: 4 weeks</p>
+                    <p>Fee: $400</p>
+                    <p>Enroll now and start your journey!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="DATAscience.jpeg" alt="Data Science Course">
+                <h3>Data Science</h3>
+                <p>Dive into data analysis and machine learning.</p>
+                <button class="crash-course-btn" onclick="toggleDetails('dataScienceDetails')">Crash Course</button>
+                <div id="dataScienceDetails" class="course-details" style="display: none;">
+                    <p>Duration: 6 weeks</p>
+                    <p>Fee: $600</p>
+                    <p>Enroll now and unlock the power of data!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="images (8).jpeg" alt="Graphic Design Course">
+                <h3>Graphic Design</h3>
+                <p>Create stunning designs using modern tools.</p>
+                <button class="crash-course-btn" onclick="toggleDetails('graphicDesignDetails')">Crash Course</button>
+                <div id="graphicDesignDetails" class="course-details" style="display: none;">
+                    <p>Duration: 5 weeks</p>
+                    <p>Fee: $450</p>
+                    <p>Get started with design today!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="java.png" alt="Java Course">
+                <h3>Java</h3>
+                <p>Learn to develop web, enterprise, and desktop applications.</p>
+                <button class="crash-course-btn" onclick="toggleDetails('javaDetails')">Crash Course</button>
+                <div id="javaDetails" class="course-details" style="display: none;">
+                    <p>Duration: 4 weeks</p>
+                    <p>Fee: $500</p>
+                    <p>Join now and master Java!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="app.png" alt="App Development Course">
+                <h3>App Development</h3>
+                <p>Build powerful mobile apps for iOS and Android.</p>
+                <button class="crash-course-btn" onclick="toggleDetails('appDevDetails')">Crash Course</button>
+                <div id="appDevDetails" class="course-details" style="display: none;">
+                    <p>Duration: 6 weeks</p>
+                    <p>Fee: $650</p>
+                    <p>Become a mobile app developer today!</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="images (9).jpeg" alt="Python Programming Course">
+                <h3>Python Programming</h3>
+                <p>Learn Python for data science, web development, and more.</p>
+                <button class="crash-course-btn" onclick="toggleDetails('pythonDetails')">Crash Course</button>
+                <div id="pythonDetails" class="course-details" style="display: none;">
+                    <p>Duration: 5 weeks</p>
+                    <p>Fee: $550</p>
+                    <p>Master Python and enhance your skills!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="faculty" id="faculty">
+        <h2>Meet Our Faculty</h2>
+        <div class="faculty-container">
+            <div class="faculty-card">
+                <img src="web_developer.png" alt="Faculty 1">
+                <h3>Mr. John Doe</h3>
+                <p>FullStack Web Development</p>
+            </div>
+            <div class="faculty-card">
+                <img src="gg.jpeg" alt="Faculty 2">
+                <h3>Mr. Kunal Kushawa</h3>
+                <p>Graphic Design Instructor</p>
+            </div>
+            <div class="faculty-card">
+                <img src="data.png" alt="Faculty 3">
+                <h3>Mr. Harry Potter</h3>
+                <p>Data Science Mentor</p>
+            </div>
+            <div class="faculty-card">
+                <img src="Shradha-Khapra.webp" alt="Faculty 4">
+                <h3>Mrs. Shradha Khapra</h3>
+                <p>Java & Software Engineering Instructor</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="about">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial">
+            <p>"EduLearn courses are amazing! I learned so much in a short time."</p>
+            <span>- Alex</span>
+        </div>
+        <div class="testimonial">
+            <p>"The instructors are knowledgeable and supportive. Highly recommend!"</p>
+            <span>- Sarah</span>
+        </div>
+    </section>
+
+    <!-- Our Student section-->
+<section class="students" id="students">
+    <h2>Our Proud Students</h2>
+    <h1>1000+ Students' Lives Impacted and Continuing</h1>
+
+    <div class="exclusive-offer">
+        <h3>🎉 Exclusive Offer: Refer & Earn Rewards! 🎉</h3>
+        <p>Invite your friends to join EduLearn and unlock exclusive benefits. For every successful referral, 
+            you and your friend will receive:</p>
+        <ul>
+            <li><strong>20% Discount</strong> on any course</li>
+            <li>Access to premium content for <strong>1 month free</strong></li>
+            <li>A chance to win exciting <strong>gift vouchers</strong></li>
+        </ul>
+        <button onclick="window.location.href='#refer'">Refer Now</button>
+    </div>
+
+    <div class="student-container">
+        <div class="student-card">
+            <img src="images (4).jpeg" alt="Student 1">
+            <h3>Alice Johnson</h3>
+            <p>Web Development Enthusiast</p>
+            <blockquote>
+                "EduLearn has been a game-changer for me. The courses provided me with hands-on experience in HTML, CSS, and JavaScript. 
+                Thanks to the mentorship and projects, I built my own portfolio website and landed an internship. Forever grateful!"
+            </blockquote>
+        </div>
+
+        <div class="student-card">
+            <img src="images (5).jpeg" alt="Student 2">
+            <h3>Michael Lee</h3>
+            <p>Data Scientist in Training</p>
+            <blockquote>
+                "EduLearn helped me bridge the gap between theory and real-world application. The Python and machine learning modules 
+                were particularly insightful. I now feel confident analyzing datasets and am well on my way to becoming a data scientist."
+            </blockquote>
+        </div>
+
+        <div class="student-card">
+            <img src="images (6).jpeg" alt="Student 3">
+            <h3>Sarah Davis</h3>
+            <p>Graphic Design Specialist</p>
+            <blockquote>
+                "I never thought I could turn my passion for design into a career until I joined EduLearn. The instructors were 
+                encouraging, and the Adobe Illustrator and Photoshop workshops gave me an edge in freelancing opportunities."
+            </blockquote>
+        </div>
+
+        <div class="student-card">
+            <img src="images (7).jpeg" alt="Student 4">
+            <h3>Daniel Martinez</h3>
+            <p>Java & Software Development Expert</p>
+            <blockquote>
+                "EduLearn provided me with the structured learning I needed to excel in software development. Their focus on Java, 
+                OOP concepts, and debugging techniques really honed my skills. I am grateful for the platform that gave me the confidence 
+                to start building professional applications."
+            </blockquote>
+        </div>
+    </div>
+    <!-- Student Reviews Section -->
+<section class="reviews" id="reviews">
+    <h2>Student Reviews</h2>
+    <div class="review-container">
+
+        <div class="review-card">
+            <img src="images (4).jpeg" alt="Student 1">
+            <h3>Alice Johnson</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <blockquote>
+                "The Data Science course was a game-changer! Thanks to EduLearn, I landed my dream job as a Data Analyst."
+            </blockquote>
+        </div>
+
+        <div class="review-card">
+            <img src="images (5).jpeg" alt="Student 2">
+            <h3>Michael Lee</h3>
+            <p>⭐⭐⭐⭐</p>
+            <blockquote>
+                "Amazing instructors! Their guidance helped me complete my Web Development portfolio."
+            </blockquote>
+        </div>
+
+        <div class="review-card">
+            <img src="images (6).jpeg" alt="Student 3">
+            <h3>Sarah Davis</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <blockquote>
+                "I absolutely loved the Graphic Design workshops! They gave me the confidence to start freelancing."
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+
+<div class="company-connection">
+    <h3>🚀 Direct Connections with Top Companies</h3>
+    <p>No third-party involvement! Get direct access to company hiring teams through EduLearn's exclusive partnerships.</p>
+    
+    <!-- Company Logos -->
+    <img src="Google_Icons-09-512.webp" alt="Direct Company Connection" />
+    <img src="photo_2426.normal.png" alt="Direct Company Connection" />
+    <img src="Amazon_icon.png" alt="Direct Company Connection" />
+    <img src="tcs-tata-consultancy-services2792.logowik.com.webp" alt="Direct Company Connection" />
+    
+    <p><strong>How it works:</strong></p>
+    <ul>
+        <li>💼 Participate in exclusive job fairs organized with partner companies.</li>
+        <li>📧 Send your resume directly to hiring managers through EduLearn's portal.</li>
+        <li>📝 Receive personal feedback and interview tips from industry professionals.</li>
+    </ul>
+    
+    <!-- Course Fees Section -->
+    <div class="course-fees">
+        <h2>💰 Course Fees</h2>
+        <p>Our courses are designed to be affordable while providing high-quality education:</p>
+        <ul>
+            <li>Web Development: <strong>$500</strong></li>
+            <li>Data Science: <strong>$600</strong></li>
+            <li>Software Engineering: <strong>$550</strong></li>
+            <li>Mobile App Development: <strong>$650</strong></li>
+        </ul>
+        <p>Note: Discounts are available for early registration and group enrollments!</p>
+        
+        <!-- Enroll Now Button -->
+        <button class="enroll-btn" onclick="window.location.href='#enrollment-form'">Enroll Now</button>
+    </div>
+</div>
+
+
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Have any questions? Reach out to us!</p>
+        <div class="contact-info">
+            <p>Email: contact@edulearn.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 EduLearn St, Learning City</p>
+        </div>
+    </section>
+
+    <!-- Login Popup -->
+    <div id="loginPopup" class="login-popup" style="display: none;">
+        <div class="login-popup-content">
+            <span id="closePopup" class="close-popup">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 EduLearn. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </footer>
+    <div class="wrapper">
+        <span class="span">Email:</span>
+        <a href="mailto:info@EduLearn.com" class="footer-link">info@EduLearn.com</a>
+    </div>
+</div>
+
+<ul class="footer-list">
+    <li><p class="footer-list-title">Online Platform</p></li>
+    <li><a href="#" class="footer-link">About</a></li>
+    <li><a href="#" class="footer-link">Courses</a></li>
+    <li><a href="#" class="footer-link">Instructor</a></li>
+    <li><a href="#" class="footer-link">Events</a></li>
+    <li><a href="#" class="footer-link">Instructor Profile</a></li>
+    <li><a href="#" class="footer-link">Purchase Guide</a></li>
+</ul>
+
+<ul class="footer-list">
+    <li><p class="footer-list-title">Links</p></li>
+    <li><a href="#" class="footer-link">Contact Us</a></li>
+    <li><a href="#" class="footer-link">Gallery</a></li>
+    <li><a href="#" class="footer-link">News & Articles</a></li>
+    <li><a href="#" class="footer-link">FAQ's</a></li>
+    <li><a href="#" class="footer-link">Sign In/Registration</a></li>
+    <li><a href="#" class="footer-link">Coming Soon</a></li>
+</ul>
+
+<div class="footer-list">
+    <p class="footer-list-title">Contacts</p>
+    <p class="footer-list-text">
+        Enter your email address to register for our newsletter subscription
+    </p>
+    <form action="" class="newsletter-form">
+        <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+        <button type="submit" class="btn has-before">
+            <span class="span">Subscribe</span>
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </button>
+    </form>
+    <ul class="social-list">
+        <li><a href="#" class="social-link"><img src="fb.jpeg" alt="Facebook"></a></li>
+        <li><a href="#" class="social-link"><img src="Linkedin.png" alt="LinkedIn"></a></li>
+        <li><a href="#" class="social-link"><img src="instagram.webp" alt="Instagram"></a></li>
+        <li><a href="#" class="social-link"><img src="twitter.jpeg" alt="Twitter"></a></li>
+    </ul>
+</div>
+</div>
+</div>
+<div class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+
+        <div class="faq-item">
+            <h3>What is the policy for course enrollment?</h3>
+            <p>All students must complete the registration form and pay the required fees before the start of the course. Enrollment is subject to seat availability.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>When do the batches start?</h3>
+            <p>Batches typically start at the beginning of each month. Please check our website for the latest schedule.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What topics are covered in the program?</h3>
+            <p>Our programs cover a wide range of topics, including web development, data science, and software engineering. Each course syllabus is available on our website.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is the duration of the program?</h3>
+            <p>The duration of our programs varies from 4 weeks to 6 months, depending on the course structure. Detailed information can be found on the course pages.</p>
+        </div>
+
+        <div class="contact-info">
+            <img src="WHATSAPP.png" alt="WhatsApp Logo" class="logo">
+            <p>Phone: <a href="tel:+9391554499">+9391554499</a></p>
+            <h1>📩</h1>
+            <p>For more inquiries, contact us on WhatsApp:</p>
+            <a href="https://wa.me/1234567890" class="whatsapp-button">Call Us on WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <div class="container">
+        <p class="copyright">© 2023 EduLearn. All rights reserved.</p>
+    </div>
+</div>
+</footer>
+  <!-- Login Popup -->
+  <div id="loginPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" id="closePopup">&times;</span>
+        <h2>Login to Your Account</h2>
+        <form action="#">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p class="thank-you-message">Thank you for visiting our website!</p>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
